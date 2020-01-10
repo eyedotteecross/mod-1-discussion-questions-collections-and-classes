@@ -1,4 +1,6 @@
 ## QUESTION 1
+require 'pry'
+
 
 pokemon = [
   {
@@ -9,8 +11,8 @@ pokemon = [
     "is_default": true,
     "order": 1,
     "weight": 69,
-    "abilities": [
-        {
+    "abilities": [ 
+        { #ind 0
             "is_hidden": true,
             "slot": 3,
             "ability": {
@@ -60,6 +62,8 @@ pokemon = [
 }
 ]
 
+pokemon
+
 
 # How would you get the url for Bulbasaur's ability?
 # How would you return the first pokemon with base experience over 40?
@@ -67,3 +71,10 @@ pokemon = [
 # How would you return an array of all of the pokemon's names?
 # How would you determine whether or not the pokemon array contained any pokemon with a weight greater than 60?
 #  whatever method you use should return true if there are any such pokemon, false if not.
+
+#Num1: pokemon[0][:abilities][0][:ability][:url]
+#Num2: pokemon.find {|poke| poke[:base_experience] > 40}
+#Num3: pokemon.select {|poke| poke[:base_experience] > 40}
+#Num4: pokemon.map {|poke| poke[:name]}
+#Num5: pokemon.select {|poke| poke[:weight] > 60}
+#Num6: pokemon.map {|poke| poke[:weight] > 60}
